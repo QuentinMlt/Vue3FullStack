@@ -132,7 +132,6 @@ app.post('/register', async (req, res) => {
     const payload = req.body;
     // Joi
     const scheme = Joi.object({
-        id: Joi.allow(),
         email: Joi.string().max(255).email().required(),
         username: Joi.string().max(255).required(),
         password: Joi.string().max(255).required()
@@ -194,4 +193,4 @@ app.use((err, req, res, next) => {
 if (process.env.NODE_ENV !== "test") {
     app.listen(3000);
 }
-module.exports = { app, Taches, Users, Task, User };
+module.exports = { app, Task, User };
