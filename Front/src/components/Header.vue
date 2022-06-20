@@ -20,10 +20,10 @@ const {user, disconnect} = useUserStore();
           <router-link class="nav-link" :to="{name: 'accueil'}">Accueil</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'demovfor'}">DemovFor</router-link>
+          <router-link class="nav-link" :to="{name: 'a-propos'}">A propos</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'demojwt'}">Demojwt</router-link>
+          <router-link class="nav-link" :to="{name: 'todolist'}">Todolist</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" :to="{name: 'login'}" v-if="!user">Se Connecter</router-link>

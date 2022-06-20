@@ -4,6 +4,9 @@ import DemoVFor from "@/components/DemoVFor.vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Register from "@/components/Register.vue";
 import Login from "@/components/Login.vue";
+import APropos from "@/components/APropos.vue";
+import Todolist from "@/components/Todolist.vue";
+
 
 const router = createRouter({
     history: createWebHistory(),
