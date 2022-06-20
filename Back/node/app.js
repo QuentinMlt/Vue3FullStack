@@ -175,7 +175,7 @@ app.post('/login', async (req, res) => {
         throw new Error('Mot de passe invalide');
     }
     const token = jwt.sign({id: user.id}, process.env.SECRET_KEY);
-    res.header('x-auth-token', token).status(200).send("Connexion réussie");
+    res.header('x-auth-token', token).status(200).send(user);
 });
 
 // app.post('/loginToken', [authenticationToken], (req, res) => {
