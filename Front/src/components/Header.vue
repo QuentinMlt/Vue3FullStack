@@ -13,7 +13,7 @@ const {user, disconnect} = useUserStore();
   
   
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <h3>{{!user ? "Welcome" : `Hey ${user.name}`}}</h3>
+    <h3>{{!user ? "Welcome" : `Hey ${user.username}`}}</h3>
     <div class="collapse navbar-collapse ms-5" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
