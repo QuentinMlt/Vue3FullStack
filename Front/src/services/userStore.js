@@ -1,7 +1,7 @@
 import { ref } from "vue";
 
 import axios from 'axios'
-const user = ref(null);
+let user = ref(null);
 
 function useUserStore(){
     return {user, register, connect, disconnect};
@@ -13,6 +13,7 @@ async function connect(email, password){
             return null;
         }
         localStorage.setItem('cours-token', response.headers['x-auth-token']);
+        user = response;
         return response.headers['x-auth-token'];
     }
     else{
