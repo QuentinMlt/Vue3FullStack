@@ -3,7 +3,7 @@ import { ref } from "vue";
 const user = ref(null);
 
 function useUserStore(){
-    return {user, connect, disconnect};
+    return {user, register, connect, disconnect};
 }
 function connect(name){
     if (name) {
@@ -21,6 +21,20 @@ function disconnect(){
         let n = localStorage.getItem("cours-user-name");
         localStorage.removeItem('cours-user-name');
         console.log(n + " Deconnecté avec succès !")
+    }
+}
+
+async function register(email, username, password){
+    if (email && password) {
+        const response = await axios.post('http://localhost:3001/register', {"username": username,"email": email,"password": password}).then(res => res).catch(err => err);
+        if (response.status !== 201) {
+            return null;
+        }
+        localStorage.setItem('cours-token', response.headers['x-auth-token']);
+        return user.value = response.data.user;
+    }
+    else{
+        return null;
     }
 }
 
