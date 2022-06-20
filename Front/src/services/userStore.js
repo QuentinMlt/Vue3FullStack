@@ -6,11 +6,14 @@ const user = ref(null);
 function useUserStore(){
     return {user, register, connect, disconnect};
 }
-function connect(name){
-    if (name) {
-        localStorage.setItem('cours-user-name', name);
-        console.log(localStorage.getItem("cours-user-name") + " Connecté avec succès !")
-        return user.value = {name};
+async function connect(email, password){
+    if (email && password) {
+        const response = await axios.post("http://localhost:3000/login", {"email": email,"password": password}).then(res => res).catch(err => err);
+        if (response.status !== 200) {
+            return null;
+        }
+        localStorage.setItem('cours-token', response.headers['x-auth-token']);
+        return response.headers['x-auth-token'];
     }
     else{
         return null;
