@@ -29,7 +29,7 @@ const {user, disconnect} = useUserStore();
           <router-link class="nav-link" :to="{name: 'login'}" v-if="!user">Se Connecter</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'register'}" v-if="!user">S'inscrire</router-link>
+          <router-link class="nav-link" :to="{name: 'register'}" v-if="!user">S'inscrire.</router-link>
         </li>
          <li class="nav-item">
           <button @click="disconnect()" class="badge badge-danger text-danger mt-2" v-if="user">Se deconnecter</button>
