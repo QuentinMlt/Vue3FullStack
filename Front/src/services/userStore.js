@@ -1,5 +1,6 @@
 import { ref } from "vue";
 
+import axios from 'axios'
 const user = ref(null);
 
 function useUserStore(){
@@ -25,8 +26,8 @@ function disconnect(){
 }
 
 async function register(email, username, password){
-    if (email && password) {
-        const response = await axios.post('http://localhost:3001/register', {"username": username,"email": email,"password": password}).then(res => res).catch(err => err);
+    if (username && email && password) {
+        const response = await axios.post('http://localhost:3000/register', {"username": username,"email": email,"password": password}).then(res => res).catch(err => err);
         if (response.status !== 201) {
             return null;
         }

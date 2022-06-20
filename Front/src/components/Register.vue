@@ -6,7 +6,6 @@ const {user} = useUserStore();
 
 const {register} = useUserStore();
 
-register("test","test","test")
 
 </script>
 
@@ -18,6 +17,6 @@ register("test","test","test")
         <input type="text" v-model="username"  placeholder="username"/>
         <input type="password" v-model="password"  placeholder="password"/>
         <button @click="register(email, username, password)">S'inscrire</button>
-
+    
 </template>
 
